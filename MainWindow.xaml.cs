@@ -30,6 +30,7 @@ namespace Record
             CbMonth.IsEnabled = false;
             CbYears.IsEnabled = false;
             this.DGStudents.Columns[0].IsReadOnly = true;
+
         }
         
        
@@ -294,17 +295,21 @@ namespace Record
                 using (SQLiteConnection connection = new SQLiteConnection(DBConnection.myConn))
                 {
                     connection.Open();
-                    string query = $@"SELECT  count() FROM Traffics  
-                    JOIN Months on Traffics.IDMonth = Months.ID 
-                    JOIN Years on Traffics.IDYear = Years.ID JOIN Students on Traffics.IDStudent = Students.ID 
-					JOIN Groups on Students.IDGroup = Groups.ID
-                    WHERE Groups.ID = '{Saver.idGroup}' and Traffics.IDMonth = '{Saver.idmonth}' and Years.ID = '{Saver.idyears}' and  (Day1 is NULL or Day1 = '')";
-                    SQLiteCommand cmd = new SQLiteCommand(query, connection);
-                    int DayB = Convert.ToInt32(cmd.ExecuteScalar());
-                    string s1 = DayB.ToString();
-                    T1.Text = s1;
+                    string[] test = new string[31];
+                    for (int i = 1; i <= 31; i++) {
+                      
+                        string query = $@"SELECT  count() FROM Traffics 
+                        JOIN Months on Traffics.IDMonth = Months.ID 
+                        JOIN Years on Traffics.IDYear = Years.ID 
+                        JOIN Students on Traffics.IDStudent = Students.ID 
+                        JOIN Groups on Students.IDGroup = Groups.ID  WHERE Groups.ID = '{Saver.idGroup}' and Traffics.IDMonth = '{Saver.idmonth}' and Years.ID = '{Saver.idyears}' and  (Day{i} is NULL or Day{i} = '')";
+                        SQLiteCommand cmd = new SQLiteCommand(query, connection);
+                        int DayB = Convert.ToInt32(cmd.ExecuteScalar());
+                        string s = DayB.ToString();
+                        test[i-1] = s;
+                        Output.Text = string.Join("      ", test);
 
-
+                    }
 
 
                 }
@@ -320,7 +325,10 @@ namespace Record
                 using (SQLiteConnection connection = new SQLiteConnection(DBConnection.myConn))
                 {
                     connection.Open();
-                    string query = $@"SELECT  count() FROM Traffics  
+                    string[] test = new string[31];
+                    for (int i = 1; i <= 31; i++)
+                    {
+                        string query = $@"SELECT  count() FROM Traffics  
                     JOIN Months on Traffics.IDMonth = Months.ID 
                     JOIN Years on Traffics.IDYear = Years.ID JOIN Students on Traffics.IDStudent = Students.ID 
 					JOIN Groups on Students.IDGroup = Groups.ID
@@ -328,10 +336,10 @@ namespace Record
                     SQLiteCommand cmd = new SQLiteCommand(query, connection);
                     int DayB = Convert.ToInt32(cmd.ExecuteScalar());
                     string s1 = DayB.ToString();
-                    H1.Text = s1;
-
-
-
+                   // H1.Text = s1;
+                    test[i - 1] = s1;
+                    H1.Text = string.Join("      ", test);
+                    }
 
                 }
             }
@@ -346,7 +354,10 @@ namespace Record
                 using (SQLiteConnection connection = new SQLiteConnection(DBConnection.myConn))
                 {
                     connection.Open();
-                    string query = $@"SELECT  count() FROM Traffics  
+                    string[] test = new string[31];
+                    for (int i = 1; i <= 31; i++)
+                    {
+                        string query = $@"SELECT  count() FROM Traffics  
                     JOIN Months on Traffics.IDMonth = Months.ID 
                     JOIN Years on Traffics.IDYear = Years.ID JOIN Students on Traffics.IDStudent = Students.ID 
 					JOIN Groups on Students.IDGroup = Groups.ID
@@ -354,11 +365,10 @@ namespace Record
                     SQLiteCommand cmd = new SQLiteCommand(query, connection);
                     int DayB = Convert.ToInt32(cmd.ExecuteScalar());
                     string s1 = DayB.ToString();
-                    P1.Text = s1;
-
-
-
-
+                   // P1.Text = s1;
+                    test[i - 1] = s1;
+                    P1.Text = string.Join("      ", test);
+                    }
                 }
             }
             catch (Exception exp)
@@ -373,18 +383,34 @@ namespace Record
                 using (SQLiteConnection connection = new SQLiteConnection(DBConnection.myConn))
                 {
                     connection.Open();
-                    string query = $@"SELECT  count() FROM Traffics  
+                    string[] test = new string[31];
+                    for (int i = 1; i <= 31; i++)
+                    {
+                        {
+                            string query = $@"SELECT  count() FROM Traffics  
                     JOIN Months on Traffics.IDMonth = Months.ID 
                     JOIN Years on Traffics.IDYear = Years.ID JOIN Students on Traffics.IDStudent = Students.ID 
 					JOIN Groups on Students.IDGroup = Groups.ID
-                    WHERE Groups.ID = '{Saver.idGroup}' and Traffics.IDMonth = '{Saver.idmonth}' and Years.ID = '{Saver.idyears}' and  Day1 = 'б'";
-                    SQLiteCommand cmd = new SQLiteCommand(query, connection);
-                    int DayB = Convert.ToInt32(cmd.ExecuteScalar());
-                    string s1 = DayB.ToString();
-                    B1.Text = s1;
+                    WHERE Groups.ID = '{Saver.idGroup}' and Traffics.IDMonth = '{Saver.idmonth}' and Years.ID = '{Saver.idyears}' and  Day{i} = 'б'";
+                            SQLiteCommand cmd = new SQLiteCommand(query, connection);
+                            int DayB = Convert.ToInt32(cmd.ExecuteScalar());
+                            string s = DayB.ToString();
+                            test[i - 1] = s;
+                            B1.Text = string.Join("      ", test);
+                            //if (i == 1) { B1.Text = s; } if (i == 2) { B2.Text = s; } if (i == 3) { B3.Text = s; }  if (i == 4) { B4.Text = s; } if (i == 5) { B5.Text = s; } if (i == 6) { B6.Text = s; } if (i == 7) { B7.Text = s; }
+                            //if (i == 8) { B8.Text = s; } if (i == 9) { B9.Text = s; } if (i == 10) { B10.Text = s; }
 
+                            //if (i == 11) { B11.Text = s; } if (i == 12) { B12.Text = s; } if (i == 13) { B13.Text = s; } if (i == 14) { B14.Text = s; } if (i == 15) { B15.Text = s; } if (i == 16) { B16.Text = s; } 
+                            //if (i == 17) { B17.Text = s; } if (i == 18) { B18.Text = s; } if (i == 19) { B19.Text = s; } if (i == 20) { B20.Text = s; }
 
-                   
+                            //if (i == 21) { B21.Text = s; } if (i == 22) { B22.Text = s; } if (i == 23) { B23.Text = s; } if (i == 24) { B24.Text = s; } if (i == 25) { B25.Text = s; } if (i == 26) { B26.Text = s; }
+                            //if (i == 27) { B27.Text = s; } if (i == 28) { B28.Text = s; } if (i == 29) { B29.Text = s; }
+                            //if (i == 30) { B30.Text = s; } if (i == 31) { B31.Text = s; } 
+
+                        }
+
+                    }
+
 
                 }
             }
@@ -451,7 +477,7 @@ namespace Record
                         SQLiteCommand cmd2 = new SQLiteCommand(query2, connection);
                         int TrafficID = Convert.ToInt32(cmd2.ExecuteScalar());
                         Saver.IDNSM = TrafficID;
-                        MessageBox.Show($@"{Saver.IDNSM}" + " IDTraffic");
+                       // MessageBox.Show($@"{Saver.IDNSM}" + " IDTraffic");
                     }
                 }
                 catch (Exception exp)
@@ -497,13 +523,13 @@ namespace Record
         {
             try
             {
-                    Saver.Den = DGStudents.CurrentCell.Column.DisplayIndex;
-                    DataRowView dataRow = (DataRowView)DGStudents.SelectedItem;
+                   // Saver.Den = DGStudents.CurrentCell.Column.DisplayIndex;
+                   // DataRowView dataRow = (DataRowView)DGStudents.SelectedItem;
 
                     //string cellValue = dataRow.Row.ItemArray[index].ToString();
-                    MessageBox.Show($"{Saver.Den}");
+                   // MessageBox.Show($"{Saver.Den}");
                     // MessageBox.Show($"{cellValue}");
- 
+
             }
             catch (System.NullReferenceException)
             {

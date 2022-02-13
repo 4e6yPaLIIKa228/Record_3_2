@@ -151,7 +151,7 @@ namespace Record
                     p.PrintVisual(Printtt, "Печать");
                 }
             }
-            catch (Exception exp)
+            catch (Exception )
             {
                 MessageBox.Show("Закройте файл, который вы пытаетесь перезаписать");
             }
