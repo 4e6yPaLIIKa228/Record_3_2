@@ -105,6 +105,7 @@ namespace Record
                     //cmd.ExecuteNonQuery();
                    // MessageBox.Show($"{countID}");
                     int proverka = 0;
+                    int sumID = 0;
 
                     for (int i = 1; i <= countID; i++)
                     {
@@ -117,25 +118,42 @@ namespace Record
                         int idmonth, idyears;
                         bool resultClass1 = int.TryParse(CbMonth.SelectedValue.ToString(), out idmonth);
                         bool resultClass2 = int.TryParse(CbYears.SelectedValue.ToString(), out idyears);
-                        string query4 = $@"SELECT  COUNT(1) FROM Traffics WHERE IDStudent= '{proverka}' AND IDMonth={idmonth} and IDYear=@'{idyears}' "; //Проверка студента на повторное добавление его в новый месяц
+                        string query4 = $@"SELECT  COUNT(1) FROM Traffics WHERE IDStudent= '{proverka}' AND IDMonth='{idmonth}' and IDYear='{idyears}' "; //Проверка студента на повторное добавление его в новый месяц
                         SQLiteCommand cmd4 = new SQLiteCommand(query4, connection);
-                        int count = Convert.ToInt32(cmd.ExecuteScalar());
+                        int count = Convert.ToInt32(cmd4.ExecuteScalar());
                         if (count == 1)
                         {
                             // MessageBox.Show("Ученик уже добавлен в этот месяц");
-                            if (countID == 1) { this.Close(); }
+                            sumID++; 
+  
                         }
                         else
                         {
-                            string query3 = $@"INSERT INTO Traffics (IDStudent,IDMonth,IDYear) values ('{countID2}',{idmonth},{idyears});";
+                            string query3 = $@"INSERT INTO Traffics (IDStudent,IDMonth,IDYear) values ('{countID2}',{idmonth},{idyears});"; // Добавление idstudenta, idмесяца и id года
                             SQLiteCommand cmd3 = new SQLiteCommand(query3, connection);
                             cmd3.ExecuteNonQuery();
-                            MessageBox.Show("Выполнил для " + $"{countID2}");
+                            // MessageBox.Show("Выполнил для " + $"{countID2}");
+
+                            for (int a = 1; a <= 31; a++)
+                            {
+                                //string temp = "123131";
+                                string query5 = $@"UPDATE Traffics SET  Day{a} = '' WHERE IDStudent = '{countID2}' AND IDMonth = '{idmonth}' AND IDYear= '{idyears}';";
+                                SQLiteCommand cmd5 = new SQLiteCommand(query5, connection);
+                                cmd5.ExecuteNonQuery();
+                            }
                         }
 
                     }
-                    MessageBox.Show("Группа добавленна в новый месяц");
-                    this.Close();
+                    if (countID == sumID) 
+                    { 
+                        MessageBox.Show("Это группа уже была ранее добавленна "); 
+                        this.Close(); 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Группа добавленна в новый месяц");
+                        this.Close();
+                    }
                 }
             }
         }

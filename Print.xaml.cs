@@ -32,9 +32,9 @@ namespace Record
                 {
                     AppData.Content = "Дата: " + $@"{Saver.Days}" + "." + $@"{C}" + "." + $@"{B}";
                     //----------------------------------------------
-                    AppColvo.Content = "В группе:" + $@" {T};" + " По списку: " + $@"{Saver.SumStudent};";
+                    AppColvo.Content = "В группе:" + $@" {T} " + " По списку: " + $@"{Saver.SumStudent}";
                     //----------------------------------------------
-                    AppGroup.Content = "Присутствуют: " + $@"{Saver.SumIn};";
+                    AppGroup.Content = "Присутствуют: " + $@"{Saver.SumIn}";
                     //----------------------------------------------
                     string getValue = "";
                     string proverka = "";

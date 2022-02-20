@@ -24,6 +24,7 @@
 
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+            
             <TextBlock Grid.Column="0"   FontWeight="Bold"  FontSize="18" Text="Группы" Margin="0,-55,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" />
             <ComboBox Grid.Column="0"   x:Name="CbGroups" Margin="10,32,10,20"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="28" FontWeight="Bold" FontSize="16" SelectionChanged="CbGroups_SelectionChanged"  />
             <TextBlock Grid.Column="1"   FontWeight="Bold"  FontSize="18" Text="Месяцы" Margin="0,-55,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" />
@@ -38,10 +39,11 @@
             <Button x:Name="Obrat" Content="Обратная свзяь" Grid.Column="3" HorizontalAlignment="Left" Margin="350,32,0,0" VerticalAlignment="Top" Width="113" Height="38" Click="Obrat_Click" />
             <!--IsEditable="True"  StaysOpenOnEdit="True"-->
         </Grid>
+        <Label Content="Учет посещаемости студентов" Margin="5,0,0,0" Grid.Row="0" Grid.Column="1" FontSize="38" FontWeight="Bold"/>
         <DataGrid x:Name="DGStudents" Grid.Column="0" RowHeight="30"   Grid.Row="2" Grid.RowSpan="1"  Margin="5" ColumnWidth="*" CanUserAddRows="False"  AutoGenerateColumns="False" MinColumnWidth="25" RowHeaderWidth="0" CellEditEnding="DGStudents_CellEditEnding" SelectedCellsChanged="DGStudents_SelectedCellsChanged"  >
             <DataGrid.Columns>
                 <!--<DataGridTextColumn Header="ID" Width="15" Binding="{Binding ID}"  />-->
-                <DataGridTextColumn Header="ФИО"  Width="155"  Binding="{Binding NSM}"/>
+                <DataGridTextColumn Header="ФИО" IsReadOnly="True"  Width="155"  Binding="{Binding NSM}"/>
                 <DataGridTextColumn Header="1"   Binding="{Binding Day1,UpdateSourceTrigger=PropertyChanged}"/>
                 <DataGridTextColumn Header="2"   Binding="{Binding Day2,UpdateSourceTrigger=PropertyChanged}"/>
                 <DataGridTextColumn Header="3"   Binding="{Binding Day3,UpdateSourceTrigger=PropertyChanged}"/>
@@ -132,7 +134,7 @@
 
             <Border VerticalAlignment="Center" Grid.ColumnSpan="31" Grid.Column="1" Grid.Row="0" Margin="0,0,0,0" >
                 <Viewbox HorizontalAlignment="Left">
-                    <TextBox  Grid.Row="0" Grid.Column="0" IsReadOnly="True" Name="B1"  Margin="0,0,0,0" FontSize="20" TextAlignment="Center" />
+                    <TextBox   Grid.Row="0" Grid.Column="0" Visibility="Hidden" IsReadOnly="True" Name="B1"  Margin="0,0,0,0" FontSize="20" TextAlignment="Center" />
                 </Viewbox>
             </Border>
 
@@ -202,14 +204,14 @@
 
             <Border VerticalAlignment="Center" Grid.ColumnSpan="31" Grid.Column="1" Grid.Row="1" Margin="0,0,0,0" >
                 <Viewbox HorizontalAlignment="Left">
-                    <TextBox  Grid.Row="1" Grid.Column="1" IsReadOnly="True" Name="P1"  Margin="0,0,0,0" FontSize="20" TextAlignment="Center"/>
+                    <TextBox  Grid.Row="1" Grid.Column="1" Visibility="Hidden" IsReadOnly="True" Name="P1"  Margin="0,0,0,0" FontSize="20" TextAlignment="Center"/>
                 </Viewbox>
             </Border>
 
 
             <Border VerticalAlignment="Center" Grid.ColumnSpan="31" Grid.Column="1" Grid.Row="2" Margin="0,0,0,0" >
                 <Viewbox HorizontalAlignment="Left">
-                    <TextBox  Grid.Row="2" Grid.Column="1" IsReadOnly="True" Name="H1"  Margin="0,0,0,0" FontSize="20" TextAlignment="Center"/>
+                    <TextBox  Grid.Row="2" Grid.Column="1" Visibility="Hidden" IsReadOnly="True" Name="H1"  Margin="0,0,0,0" FontSize="20" TextAlignment="Center"/>
                 </Viewbox>
             </Border>
 
@@ -218,7 +220,7 @@
 
             <Border VerticalAlignment="Center" Grid.ColumnSpan="31" Grid.Column="1" Grid.Row="3" Margin="0,0,0,0" >
                 <Viewbox HorizontalAlignment="Left">
-                    <TextBox x:Name="Output"  Grid.Column="1" Margin="0,0,0,0"  IsReadOnly="True"  TextAlignment="Center"   FontSize="20" />
+                    <TextBox x:Name="Output" Visibility="Hidden"  Grid.Column="1" Margin="0,0,0,0"  IsReadOnly="True"  TextAlignment="Center"   FontSize="20" />
                 </Viewbox>
             </Border>
         </Grid>

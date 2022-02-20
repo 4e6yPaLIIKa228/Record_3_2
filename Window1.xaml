@@ -5,17 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Record"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="360" WindowState="Normal" WindowStartupLocation="CenterScreen">
+        Title="Window1"  WindowState="Normal" WindowStartupLocation="CenterScreen"  Height="360" Width="358"  MaxHeight="360" MaxWidth="358"   MinHeight="360" MinWidth="358">
     <Grid>
-        <TextBox x:Name="q" HorizontalAlignment="Left" Height="29" Margin="120,71,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="200" />
-        <TextBox x:Name="w" HorizontalAlignment="Left" Height="29" Margin="120,115,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="200" />
-        <TextBox x:Name="TxMounth" HorizontalAlignment="Left" Height="29" Margin="120,160,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="200" />
-        <Label Content="Группа" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top" Width="105"/>
-        <Label Content="Месяц" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" Width="105"/>
-        <Label Content="Год" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top" Width="105"/>
-        <ComboBox x:Name="CbDays" HorizontalAlignment="Left" Margin="120,206,0,0" VerticalAlignment="Top" Width="200" Height="29" SelectionChanged="CbDays_SelectionChanged"/>
-        <Label Content="День" HorizontalAlignment="Left" Margin="10,206,0,0" VerticalAlignment="Top" Width="105"/>
-        <Button Content="Печать" HorizontalAlignment="Left" Margin="120,315,0,0" VerticalAlignment="Top" Width="135" Height="40" FontSize="20" Click="Button_Click"/>
+        <TextBox x:Name="q" HorizontalAlignment="Left" Height="29" Margin="81,41,0,0" TextWrapping="Wrap"  FontWeight="Bold" FontSize="16" VerticalAlignment="Top" Width="200" />
+        <TextBox x:Name="w" HorizontalAlignment="Left" Height="29" Margin="81,85,0,0" TextWrapping="Wrap"  FontWeight="Bold" FontSize="16" VerticalAlignment="Top" Width="200" />
+        <TextBox x:Name="TxMounth" HorizontalAlignment="Left" Height="29" Margin="81,130,0,0" TextWrapping="Wrap"  FontWeight="Bold" FontSize="16" VerticalAlignment="Top" Width="200" />
+        <Label Content="Группа" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="71"/>
+        <Label Content="Месяц" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Width="71"/>
+        <Label Content="Год" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="71"/>
+        <ComboBox x:Name="CbDays"  FontWeight="Bold" FontSize="16" HorizontalAlignment="Left" Margin="81,176,0,0" VerticalAlignment="Top" Width="200" Height="29" SelectionChanged="CbDays_SelectionChanged"/>
+        <Label Content="День" HorizontalAlignment="Left" Margin="10,176,0,0" VerticalAlignment="Top" Width="71"/>
+        <Button Content="Печать" HorizontalAlignment="Left" Margin="216,270,0,0" VerticalAlignment="Top" Width="115" Height="40" FontSize="20" Click="Button_Click"/>
+        <Button Content="Назад" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top" Width="115" Height="40" FontSize="20" Click="Button_Click"/>
 
     </Grid>
 </Window>

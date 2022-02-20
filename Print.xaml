@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Record"
         mc:Ignorable="d"
-        Title="Print" Height="550" Width="700">
+        Title="Print" Height="550" Width="1000">
     <Grid  x:Name="Printtt">
-        <Label x:Name="AppData" Content="DATA" HorizontalAlignment="Left" Margin="61,41,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="AppColvo" Content="ОБЩЕЕ КОЛ-ВО" HorizontalAlignment="Left" Margin="271,76,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.493,0.551"/>
-        <Label x:Name ="FIOIll" Content="Ф.И.О. заболевших:" HorizontalAlignment="Left" Margin="61,156,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="FIOAPP" Content="Ф.И.О. прич. :" HorizontalAlignment="Left" Margin="279,156,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="AppPrechena" Content="Label" HorizontalAlignment="Left" Margin="302,209,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="AppBolen" Content="Label" HorizontalAlignment="Left" Margin="82,209,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="AppGroup" Content="Label" HorizontalAlignment="Left" Margin="302,113,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="FIOН" Content="Ф.И.О. без прич. :" HorizontalAlignment="Left" Margin="533,156,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="AppН" Content="Label" HorizontalAlignment="Left" Margin="580,209,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="AppData" Content="DATA" HorizontalAlignment="Left" Margin="60,41,0,0" VerticalAlignment="Top" Width="160"/>
+        <Label x:Name="AppColvo" Content="ОБЩЕЕ КОЛ-ВО" HorizontalAlignment="Left" Margin="321,77,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.493,0.551"/>
+        <Label x:Name ="FIOIll" Content="Оттуствуют по болезни:" HorizontalAlignment="Left" Margin="60,160,0,0" VerticalAlignment="Top" Height="26" Width="160"/>
+        <Label x:Name="FIOAPP" Content="Оттуствуют по уважительной причине: " HorizontalAlignment="Left" Margin="240,160,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="AppPrechena" Content="Label" HorizontalAlignment="Left" Margin="240,209,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="AppBolen" Content="Label" HorizontalAlignment="Left" Margin="60,209,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="AppGroup" Content="Label" HorizontalAlignment="Left" Margin="352,114,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="FIOН" Content="Оттуствуют по неуважительной причине: " HorizontalAlignment="Left" Margin="500,160,0,0" VerticalAlignment="Top" Width="250"/>
+        <Label x:Name="AppН" Content="Label" HorizontalAlignment="Left" Margin="500,209,0,0" VerticalAlignment="Top"/>
 
 
     </Grid>

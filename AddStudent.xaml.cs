@@ -98,7 +98,7 @@ namespace Record
                         cmd.Parameters.AddWithValue("@NSM", TbNSM.Text);
                         cmd.Parameters.AddWithValue("@IDGroup", idgrup);
                         cmd.ExecuteNonQuery();
-                        MessageBox.Show("Добавил");
+                       // MessageBox.Show("Добавил");
                         this.Close();
                     }
                     catch (SQLiteException ex)
