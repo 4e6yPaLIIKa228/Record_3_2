@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Record"
         mc:Ignorable="d"
-        Title="Window1"  WindowState="Normal" WindowStartupLocation="CenterScreen"  Height="360" Width="358"  MaxHeight="360" MaxWidth="358"   MinHeight="360" MinWidth="358">
+        Title="Отчет на печать"  WindowState="Normal" WindowStartupLocation="CenterScreen"  Height="360" Width="358"  MaxHeight="360" MaxWidth="358"   MinHeight="360" MinWidth="358">
     <Grid>
         <TextBox x:Name="q" HorizontalAlignment="Left" Height="29" Margin="81,41,0,0" TextWrapping="Wrap"  FontWeight="Bold" FontSize="16" VerticalAlignment="Top" Width="200" />
         <TextBox x:Name="w" HorizontalAlignment="Left" Height="29" Margin="81,85,0,0" TextWrapping="Wrap"  FontWeight="Bold" FontSize="16" VerticalAlignment="Top" Width="200" />

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Record"
         mc:Ignorable="d"
-      Title="AddStudents"  MaxHeight="310" MaxWidth="295" MinHeight="310" MinWidth="295" WindowState="Normal" WindowStartupLocation="CenterScreen">
+      Title="Добавление"  MaxHeight="310" MaxWidth="295" MinHeight="310" MinWidth="295" WindowState="Normal" WindowStartupLocation="CenterScreen">
     <Grid>
         <Button x:Name="BtBack" Content="Назад" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top" Width="61" Height="38" Click="BtBack_Click"/>
         <Button x:Name="BtAddGroup" Content="Добавить группу" HorizontalAlignment="Left" Margin="80,40,0,0" VerticalAlignment="Top" Width="140" Height="40" Click="BtAddGroup_Click"/>

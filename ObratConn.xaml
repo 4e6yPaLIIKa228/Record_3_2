@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Record"
         mc:Ignorable="d"
-        Title="ObratConn" Height="450" Width="800" WindowState="Normal" WindowStartupLocation="CenterScreen">
+        Title="Обратная связь" Height="450" Width="800" WindowState="Normal" WindowStartupLocation="CenterScreen">
     <Grid>
+        <Image Source="img/logo.png" Margin="10,3,632,358" />
         <Button x:Name="BtMes" Content="Отправить" Margin="246,335,247,38" Click="BtMes_Click"/>
-        <TextBox  Name="mess"   Margin="24,44,38,133"/>
+        <TextBox  Name="mess"   Margin="20,79,33,98"/>
     </Grid>
 </Window>

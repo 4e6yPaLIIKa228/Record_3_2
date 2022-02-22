@@ -5,17 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Record"
         mc:Ignorable="d"
-       Title="Добавление студента" WindowState="Normal" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner" Height="300" Width="480"  MinHeight="300" MinWidth="480" MaxHeight="300" MaxWidth="480"  >
+       Title="Добавление студента" WindowState="Normal" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner" Height="290" Width="480"    >
     <Grid>
-        <Label Content="Студент" HorizontalAlignment="Left" Margin="22,24,0,0" VerticalAlignment="Top" Width="56" HorizontalContentAlignment="Right" Height="26"/>
-        <TextBox x:Name="TbNSM" HorizontalAlignment="Left" Height="22" Margin="80,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" VerticalContentAlignment="Center" />
-        <Button x:Name="BtnAdd" Content="Добавить" HorizontalAlignment="Left" Height="40" Margin="365,200,0,0" VerticalAlignment="Top" Width="82" Click="BtnAdd_Click"/>
-        <Button x:Name="BtnBack" Content="Назад" HorizontalAlignment="Left" Height="40" Margin="19,200,0,0" VerticalAlignment="Top" Width="81" Click="BtnBack_Click"/>
-        <Label Content="Группы" HorizontalAlignment="Left" Margin="29,73,0,0" VerticalAlignment="Top" Width="51" HorizontalContentAlignment="Right" Height="26"/>
-        <ComboBox Grid.Column="0"   x:Name="CbGroups" Margin="80,72,237,160"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" Height="28" FontWeight="Bold" FontSize="16"/>
-        <Label Content="Месяцы" HorizontalAlignment="Left" Margin="224,73,0,0" VerticalAlignment="Top" Width="56" HorizontalContentAlignment="Right" Height="26"/>
-        <ComboBox   x:Name="CbMonth" Margin="285,72,32,160"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" Height="28" FontWeight="Bold" FontSize="16" />
-        <Label Content="Годы" HorizontalAlignment="Left" Margin="50,120,0,0" VerticalAlignment="Top" Width="30" HorizontalContentAlignment="Right" Height="26"/>
-        <ComboBox   x:Name="CbYears" Margin="80,120,237,112"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" Height="28" FontWeight="Bold" FontSize="16" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="65"></ColumnDefinition>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Source="img/logo.png" Margin="5" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="65"></ColumnDefinition>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Студент" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="5"  VerticalAlignment="Center" HorizontalContentAlignment="Right" />
+            <TextBox x:Name="TbNSM"  Grid.Row="0" Grid.Column="1" Width="395" HorizontalAlignment="Left" Margin="5" Height="22" TextWrapping="Wrap" VerticalAlignment="Center"  VerticalContentAlignment="Center" />
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="158"></ColumnDefinition>
+                <ColumnDefinition Width="158"></ColumnDefinition>
+                <ColumnDefinition Width="158"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Label Content="Группы" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="51" HorizontalContentAlignment="Right" Height="26"/>
+            <Label Content="Месяцы" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="56" HorizontalContentAlignment="Right" Height="26"/>
+            <Label Content="Годы"   Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="30" HorizontalContentAlignment="Right" Height="26"/>
+            <ComboBox   x:Name="CbGroups" Grid.Column="0" Grid.Row="1"   HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" Height="28" FontWeight="Bold" FontSize="16"/>
+            <ComboBox   x:Name="CbMonth"  Grid.Column="1" Grid.Row="1"   HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" Height="28" FontWeight="Bold" FontSize="16" />
+            <ComboBox   x:Name="CbYears"  Grid.Column="2" Grid.Row="1"   HorizontalAlignment="Center" VerticalAlignment="Center" Width="140" Height="28" FontWeight="Bold" FontSize="16" />
+        </Grid>
+        <Grid Grid.Row="3">
+            <Button x:Name="BtnAdd" Content="Добавить" Grid.Column="0" HorizontalAlignment="Right" Margin="5" Height="40"  VerticalAlignment="Top" Width="82" Click="BtnAdd_Click"/>
+            <Button x:Name="BtnBack" Content="Назад"  Grid.Column="0" HorizontalAlignment="Left" Margin="5" Height="40"  VerticalAlignment="Top" Width="81" Click="BtnBack_Click"/>
+
+        </Grid>
+        
+        
+       
+       
+        
+        
+        
     </Grid>
 </Window>
